@@ -2,10 +2,24 @@ $app-background-color: #092B40;
 $search-icon-color: #D96F32;
 $text-color: #fff;
 
+@import url(https://fonts.googleapis.com/css?family=Rokkitt:700);
+
 html, body, #react-app {
 	height: 100%;
 	background-color: $app-background-color;
+	color: $text-color;
+	font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, Sans-Serif;
 }
 
+.search-icon {
+	display: block;
+	border: 4px solid $search-icon-color;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+}
 
-
+.search-icon-row {
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
