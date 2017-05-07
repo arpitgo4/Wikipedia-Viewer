@@ -14,10 +14,10 @@ export default class Search extends React.Component {
 					<div className="row search-icon-row">
 						<div className="col-xs-12">
 							<i className="search-icon center-block" />
-							<i className="textbox">
+							{/*<i className="textbox">
 								<input type="text" />
 								<i className="cross" />		
-							</i>
+							</i>*/}
 						</div>
 					</div>
 
