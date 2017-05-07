@@ -58,18 +58,36 @@ html, body, #react-app {
 		}
 	}
 
-	@mixin cross($color) {
-		content: '';
-		display: block;
+	.cross {
+		position: absolute;
 		width: 20px;
 		height: 20px;
-		//border: 3px solid $icon-color;
-		background-color: $icon-color;
-		color: $color;
+		opacity: .8;
+
+		&:before, &:after {
+			content: ' ';
+			position: absolute;
+			width: 2px;
+			height: 20px;
+			background-color: $icon-color;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&:before {
+			transform: rotate(45deg);
+		} 
+
+		&:after {
+			transform: rotate(-45deg);
+		}
 	}
 
-	&:after {
-		@include cross($icon-color);
+	i {
+		position: absolute;
+
 	}
 }
 
