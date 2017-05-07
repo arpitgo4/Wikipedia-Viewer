@@ -16,7 +16,7 @@ export default class Search extends React.Component {
 							<i className="search-icon center-block" />
 							<i className="textbox">
 								<input type="text" />
-								<i className="cross" />
+								<i className="cross" />		
 							</i>
 						</div>
 					</div>
