@@ -52,32 +52,37 @@ html, body, #react-app {
 }
 
 .search-icon-expand {
-	& input {
-		animation: expand .35s ease-in forwards;
-	}
+	$shrink-tail-time: .15s;
+	$expand-time: .15s;
 
 	&:after {
-		animation: shrink-tail .35s ease-in forwards;
+		animation: shrink-tail $shrink-tail-time ease-out forwards;
 	}
-}
 
-@keyframes shrink-tail {
-	from {
-		height: 14px;
+	& input {
+		// $shrink-tail-time used as delay for expansion of input.
+		animation: expand $expand-time ease-out $shrink-tail-time forwards;
 	}
-	to {
-		height: 0px;
-	}
-}
 
-@keyframes expand {
-	from {
-		border-radius: 50%;
-		width: 37.5px;
+	@keyframes shrink-tail {
+		from {
+			height: 14px;
+		}
+		to {
+			height: 0px;
+			border-width: 0;
+		}
 	}
-	to {
-		border-radius: 20px;
-		width: 200px;
+
+	@keyframes expand {
+		from {
+			border-radius: 50%;
+			width: 37.5px;
+		}
+		to {
+			border-radius: 20px;
+			width: 250px;
+		}
 	}
 }
 
