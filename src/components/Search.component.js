@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 export default class Search extends React.Component {
 
@@ -19,7 +20,7 @@ export default class Search extends React.Component {
 
 					<div className="row search-icon-row">
 						<div className="col-xs-12">
-							<div onClick={this.expand.bind(this)} className="search-icon">
+							<div onClick={this.expand.bind(this)} className={`search-icon ${this.state.isExpanded ? "search-icon-expand" : ""}`}>
 								<input type="text" className="center-block" />
 							</div>
 						</div>
@@ -36,6 +37,6 @@ export default class Search extends React.Component {
 	}
 
 	expand() {
-		this.setState({ ...this.state, isExpanded: true });
+		this.setState({ ...this.state, isExpanded: !this.state.isExpanded });
 	}
 }

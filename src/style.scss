@@ -51,6 +51,36 @@ html, body, #react-app {
 	}
 }
 
+.search-icon-expand {
+	& input {
+		animation: expand .35s ease-in forwards;
+	}
+
+	&:after {
+		animation: shrink-tail .35s ease-in forwards;
+	}
+}
+
+@keyframes shrink-tail {
+	from {
+		height: 14px;
+	}
+	to {
+		height: 0px;
+	}
+}
+
+@keyframes expand {
+	from {
+		border-radius: 50%;
+		width: 37.5px;
+	}
+	to {
+		border-radius: 20px;
+		width: 200px;
+	}
+}
+
 .textbox {
 	input {
 		background-color: $app-background-color;
