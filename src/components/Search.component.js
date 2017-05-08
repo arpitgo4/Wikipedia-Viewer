@@ -7,6 +7,7 @@ export default class Search extends React.Component {
 
 	ENTER_KEY_CODE = 13;
 	api = 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=';
+	page = 'https://en.wikipedia.org/?curid=';
 
 	constructor() {
 		super();
@@ -51,7 +52,6 @@ export default class Search extends React.Component {
 			const toSearch = this.refs.searchText.value;
 			superagent
 				.get(this.api + toSearch)
-				.set('Api-User-Agent', 'arpit.go4@gmail.com')
 				.end((err, res) => {
 					if(err) console.log(err);
 					else console.log(res.body);
