@@ -52,8 +52,8 @@ html, body, #react-app {
 }
 
 .search-icon-expand {
-	$shrink-tail-time: .15s;
-	$expand-time: .15s;
+	$shrink-tail-time: .10s;
+	$expand-time: .20s;
 
 	&:after {
 		animation: shrink-tail $shrink-tail-time ease-out forwards;
