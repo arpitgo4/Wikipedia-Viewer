@@ -1,6 +1,12 @@
 import React from 'react';
 
 export default class Search extends React.Component {
+
+	constructor() {
+		super();
+		this.state = { isExpanded: false };
+	}
+
 	render() {
 		return (
 			<div className="row text-center">
@@ -13,7 +19,7 @@ export default class Search extends React.Component {
 
 					<div className="row search-icon-row">
 						<div className="col-xs-12">
-							<div className="search-icon">
+							<div onClick={this.expand.bind(this)} className="search-icon">
 								<input type="text" className="center-block" />
 							</div>
 						</div>
@@ -27,5 +33,9 @@ export default class Search extends React.Component {
 				</div>
 			</div>
 		);
+	}
+
+	expand() {
+		this.setState({ ...this.state, isExpanded: true });
 	}
 }
