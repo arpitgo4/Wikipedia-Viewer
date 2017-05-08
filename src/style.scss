@@ -26,7 +26,7 @@ html, body, #react-app {
 		border-radius: 50%;
 		width: 37.5px;
 		height: 37.5px;
-
+	
 		&:hover {
 			cursor: pointer;
 		}
@@ -82,6 +82,9 @@ html, body, #react-app {
 		to {
 			border-radius: 20px;
 			width: 250px;
+			font-size: .8em;
+			padding-left: .8%;
+			padding-right: 2.0%;
 		}
 	}
 }
