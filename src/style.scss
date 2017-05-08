@@ -19,27 +19,35 @@ html, body, #react-app {
 .search-icon {
 	$border-width: 4px;
 
-	display: block;
-	border: $border-width solid $icon-color;
-	border-radius: 50%;
-	width: 37.5px;
-	height: 37.5px;
+	input {
+		display: block;
+		border: $border-width solid $icon-color;
+		background-color: $app-background-color;
+		border-radius: 50%;
+		width: 37.5px;
+		height: 37.5px;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
 
 	&:after {
 		display: block;
+		position: absolute;
 		content: '';
 		height: 14px;
 		width: 0px;
 		border: ($border-width * 0.35) solid $icon-color;
 		position: relative;
-		top: 27px;
-		left: 100%;
+		top: -6px;
+		left: 51.2%;
 		transform: rotate(-45deg);
 		background-color: $icon-color;
- 	}
-
-	&:hover {
-		cursor: pointer;
 	}
 }
 

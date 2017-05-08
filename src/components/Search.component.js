@@ -13,8 +13,8 @@ export default class Search extends React.Component {
 
 					<div className="row search-icon-row">
 						<div className="col-xs-12">
-							<div className="">
-								<input type="text" style={{ backgroundColor: '#092B40'}} className="search-icon center-block" />
+							<div className="search-icon">
+								<input type="text" className="center-block" />
 							</div>
 						</div>
 					</div>
