@@ -16,6 +16,14 @@ html, body, #react-app {
 	font-size: 1.150em;
 }
 
+.rand-article-link > a {
+	color: $text-color;
+
+	&:hover {
+		text-decoration: none;
+	} 
+}
+
 .search-icon {
 	$border-width: 4px;
 

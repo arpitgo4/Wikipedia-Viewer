@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
+import superagent from 'superagent';
+
 export default class Search extends React.Component {
+
+	ENTER_KEY_CODE = 13;
+	api = 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=';
 
 	constructor() {
 		super();
@@ -14,14 +19,19 @@ export default class Search extends React.Component {
 				<div className="col-xs-12">
 					<div className="row">
 						<div className="col-xs-12">
-							<p>Click here for a random article</p>
+							<div className="rand-article-link">
+								<a href="https://en.wikipedia.org/wiki/Special:Random" 
+										target='_blank'>
+										Click here for a random article
+								</a>
+							</div>
 						</div>
 					</div>
 
 					<div className="row search-icon-row">
-						<div className="col-xs-12">
-							<div onClick={this.expand.bind(this)} className={`search-icon ${this.state.isExpanded ? "search-icon-expand" : ""}`}>
-								<input type="text" className="center-block" />							
+						<div className="col-xs-12">					
+							<div onClick={this.expand.bind(this)} className={`search-icon ${this.state.isExpanded ? 'search-icon-expand' : ''}`}>
+								<input onKeyDown={this.search.bind(this)} type="text" ref="searchText" className="center-block" />							
 							</div>
 						</div>
 					</div>
@@ -34,6 +44,19 @@ export default class Search extends React.Component {
 				</div>
 			</div>
 		);
+	}
+
+	search(event) {
+		if(event.keyCode === this.ENTER_KEY_CODE){
+			const toSearch = this.refs.searchText.value;
+			superagent
+				.get(this.api + toSearch)
+				.set('Api-User-Agent', 'arpit.go4@gmail.com')
+				.end((err, res) => {
+					if(err) console.log(err);
+					else console.log(res.body);
+				});
+		}
 	}
 
 	expand() {
