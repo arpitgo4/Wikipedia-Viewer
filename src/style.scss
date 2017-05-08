@@ -19,7 +19,7 @@ html, body, #react-app {
 .rand-article-link > a {
 	color: $text-color;
 
-	&:hover {
+	&:hover, &:focus {
 		text-decoration: none;
 	} 
 }
