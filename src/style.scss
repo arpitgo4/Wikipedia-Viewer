@@ -2,6 +2,10 @@ $app-background-color: #092B40;
 $icon-color: #D96F32;
 $text-color: #fff;
 
+$wikilist-row-background-color: #e6e6e7;
+$wikilist-row-left-border-color: #d86f32;
+$wikilist-row-text-color: #2b2b2b;
+
 @import url(https://fonts.googleapis.com/css?family=Rokkitt:700);
 
 html, body, #react-app {
@@ -172,11 +176,12 @@ html, body, #react-app {
 }
 
 .wikilist-enter {
-
+	opacity: 0;
 }
 
 .wikilist-enter-active {
-
+	opacity: 1;
+	transition: opacity .5s ease-in;
 }
 
 .wikilist-leave {
@@ -184,5 +189,26 @@ html, body, #react-app {
 }
 
 .wikilist-leave-active {
-	
+
+}
+
+.wikiList-row {
+	background-color: $wikilist-row-background-color;
+	padding: 2.4%;
+	margin: 2%;
+
+	.wikilist-row-title {
+		color: black;
+		font-weight: bold;
+		font-size: 1.2em;
+	}
+
+	wikilist-row-body {
+		color: $wikilist-row-text-color;
+	}
+
+	&:hover {
+		border-left: 5px solid $icon-color;
+		cursor: pointer;
+	}
 }
