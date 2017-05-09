@@ -52,6 +52,7 @@ export default class Search extends React.Component {
 			const toSearch = this.refs.searchText.value;
 			superagent
 				.get(this.api + toSearch)
+				.set('Api-User-Agent', 'arpit.go4@gmail.com')
 				.end((err, res) => {
 					if(err) console.log(err);
 					else console.log(res.body);
