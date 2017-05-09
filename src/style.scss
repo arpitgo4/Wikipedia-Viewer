@@ -196,15 +196,17 @@ html, body, #react-app {
 	background-color: $wikilist-row-background-color;
 	padding: 2.4%;
 	margin: 2%;
+	box-sizing: border-box;
 
 	.wikilist-row-title {
 		color: black;
 		font-weight: bold;
-		font-size: 1.2em;
+		font-size: 1.1em;
 	}
 
-	wikilist-row-body {
+	.wikilist-row-body {
 		color: $wikilist-row-text-color;
+		font-size: .85em;
 	}
 
 	&:hover {
