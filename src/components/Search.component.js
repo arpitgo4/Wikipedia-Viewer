@@ -55,8 +55,7 @@ export default class Search extends React.Component {
 				.set('Api-User-Agent', 'arpit.go4@gmail.com')
 				.end((err, res) => {
 					if(err) console.log(err);
-					else console.log(res.body.query.pages);
-					this.props.onSearchHandler(res.body.query.pages);
+					else this.props.onSearchHandler(res.body.query.pages);
 				});
 		}
 	}
