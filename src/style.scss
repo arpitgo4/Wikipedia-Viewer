@@ -195,8 +195,9 @@ html, body, #react-app {
 
 .wikiList-row {
 	background-color: $wikilist-row-background-color;
-	padding: 2.4%;
-	margin: 2%;
+	padding: 3.0%;
+	padding-bottom: 1.0%;
+	margin: .9%;
 	width: 90%;
 	box-sizing: content-box;
 	border-left: 5px solid $app-background-color;
@@ -205,6 +206,7 @@ html, body, #react-app {
 		color: black;
 		font-weight: bold;
 		font-size: 1.1em;
+		margin-bottom: 1.6%;
 	}
 
 	.wikilist-row-body {

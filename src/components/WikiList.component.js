@@ -17,10 +17,8 @@ export default class WikiList extends React.Component {
 						{
 							this.props.wikiList.map(page =>
 								<div onClick={(({ pageid }) => () => this.openPage(pageid))(page)} className="wikiList-row" key={Math.random()}>
-									<div className="wikilist-row-container">
-										<p className="wikilist-row-title">{page.title}</p>
-										<p className="wikilist-row-body">{page.extract}</p>
-									</div>
+									<p className="wikilist-row-title">{page.title}</p>
+									<p className="wikilist-row-body">{page.extract}</p>
 								</div>
 							)
 						}
