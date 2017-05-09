@@ -56,6 +56,7 @@ export default class Search extends React.Component {
 				.end((err, res) => {
 					if(err) console.log(err);
 					else console.log(res.body.query.pages);
+					this.props.onSearchHandler(res.body.query.pages);
 				});
 		}
 	}
