@@ -15,7 +15,7 @@ export default class Search extends React.Component {
 
 	render() {
 		return (
-			<div className="row text-center">
+			<div className={`row text-center ${this.props.pullUp ? 'pull-up' : 'push-down'}`}>
 				<div className="col-xs-12">
 					<div className="row">
 						<div className="col-xs-12">
@@ -48,8 +48,8 @@ export default class Search extends React.Component {
 
 	search(event) {
 		if(event.keyCode === this.ENTER_KEY_CODE){
-			// clear the rendered list
-			this.props.onSearchHandler([]);
+			this.props.onSearchHandler([]);			// clear the rendered list
+			this.props.adjustSearchComponent(true);
 			const toSearch = this.refs.searchText.value;
 			superagent
 				.get(this.api + toSearch)

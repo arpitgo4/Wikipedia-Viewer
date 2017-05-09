@@ -15,7 +15,7 @@ export default class WikiList extends React.Component {
 						transitionLeaveTimeout={500}>
 						{
 							this.props.wikiList.map(page =>
-								<div onClick={(({ pageid }) => () => this.openPage(pageid))(page)} className="wikiList-row" key={Math.random()}>
+								<div onClick={(({ pageid }) => () => this.openPage(pageid))(page)} className="wikilist-row" key={Math.random()}>
 									<p className="wikilist-row-title">{page.title}</p>
 									<p className="wikilist-row-body">{page.extract}</p>
 								</div>
