@@ -6,13 +6,12 @@ export default class WikiList extends React.Component {
 	wikiPage = 'https://en.wikipedia.org/?curid=';
 
 	render() {
-	//	console.log('wiki pages', this.props.wikiList);
 		return (
 			<div className="row">
 				<div className="col-xs-offset-1 col-xs-10">
 					<ReactCSSTransitionGroup
 						transitionName="wikilist"
-						transitionEnterTimeout={500}
+						transitionEnterTimeout={1000}
 						transitionLeaveTimeout={500}>
 						{
 							this.props.wikiList.map(page =>
