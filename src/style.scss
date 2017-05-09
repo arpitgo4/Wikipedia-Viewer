@@ -185,19 +185,21 @@ html, body, #react-app {
 }
 
 .wikilist-leave {
-
+	opacity: 1;
 }
 
 .wikilist-leave-active {
-
+	opacity: 0;
+	transition: opacity .5 ease-in;
 }
 
 .wikiList-row {
 	background-color: $wikilist-row-background-color;
 	padding: 2.4%;
 	margin: 2%;
-	box-sizing: border-box;
-	
+	width: 90%;
+	box-sizing: content-box;
+
 	.wikilist-row-title {
 		color: black;
 		font-weight: bold;
