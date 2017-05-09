@@ -6,7 +6,7 @@ export default class WikiList extends React.Component {
 	render() {
 		return (
 			<div className="row">
-				<div className="col-xs-offset-3 col-xs-6">
+				<div className="col-xs-offset-0 col-xs-11">
 					{/*<ReactCSSTransitionGroup
 						transitionName=""
 						transitionEnterTimeout={}
@@ -15,6 +15,12 @@ export default class WikiList extends React.Component {
 
 						})}
 					</ReactCSSTransitionGroup>*/}
+
+					<ul>
+						{this.props.wikiList.map((page) => <ul>{page.extract}</ul>)}
+
+					</ul>
+						
 				</div>
 			</div>
 		);
