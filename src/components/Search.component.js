@@ -31,7 +31,7 @@ export default class Search extends React.Component {
 
 					<div className="row search-icon-row">
 						<div className="col-xs-12">					
-							<div onClick={this.expand.bind(this)} className={`search-icon ${this.state.isExpanded ? 'search-icon-expand' : ''}`}>
+							<div onClick={this.expand.bind(this)} className={`search-icon ${this.state.isExpanded ? 'search-icon-expand' : 'search-icon-shrink'}`}>
 								<input onKeyDown={this.search.bind(this)} type="text" ref="searchText" className="center-block" />							
 							</div>
 						</div>

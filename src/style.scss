@@ -97,6 +97,74 @@ html, body, #react-app {
 	}
 }
 
+.search-icon-shrink {
+	$expand-tail-time: .10s;
+	$shrink-time: .20s;
+
+	& input {
+		animation: shrink $shrink-time ease-out forwards;
+	}
+
+	&:after {
+		// $expand-tail-time used as delay for expansion of input.
+
+		animation: expand-tail $expand-tail-time ease-out $shrink-time forwards;
+	}
+
+	@keyframes expand-tail {
+		from {
+			height: 0px;
+			border-width: 0;
+		}
+		to {
+			height: 14px;
+			border-width: 1.28px solid $icon-color;
+		}
+	}
+
+	@keyframes shrink {
+		from {
+			border-radius: 20px;
+			width: 250px;
+			font-size: .8em;
+			padding-left: .8%;
+			padding-right: 2.0%;
+		}
+		to {
+			border-radius: 50%;
+			width: 37.5px;
+		}
+	}	
+}
+
+.cross {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	opacity: .8;
+
+	&:before, &:after {
+		content: ' ';
+		position: absolute;
+		width: 2px;
+		height: 20px;
+		background-color: $icon-color;
+	}
+
+	&:hover {
+		opacity: 1;
+		cursor: pointer;
+	}
+
+	&:before {
+		transform: rotate(45deg);
+	} 
+
+	&:after {
+		transform: rotate(-45deg);
+	}
+}
+
 .search-icon-row {
 	margin-top: 1%;
 	margin-bottom: .5%;
