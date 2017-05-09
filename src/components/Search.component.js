@@ -48,9 +48,11 @@ export default class Search extends React.Component {
 
 	search(event) {
 		if(event.keyCode === this.ENTER_KEY_CODE){
+			// clear the rendered list
+			this.props.onSearchHandler([]);
 			const toSearch = this.refs.searchText.value;
 			superagent
-				.post(this.api + toSearch)
+				.get(this.api + toSearch)
 				.set('Api-User-Agent', 'arpit.go4@gmail.com')
 				.end((err, res) => {
 					if(err) console.log(err);
