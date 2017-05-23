@@ -30,8 +30,10 @@ export default class Search extends React.Component {
 
 					<div className="row search-icon-row">
 						<div className="col-xs-12">					
-							<div onClick={this.expand.bind(this)} className={`search-icon ${this.state.isExpanded ? 'search-icon-expand' : 'search-icon-shrink'}`}>
-								<input onKeyDown={this.search.bind(this)} type="text" ref="searchText" className="center-block" />							
+							<div className={`search-icon ${this.state.isExpanded ? 'search-icon-expand' : 'search-icon-shrink'}`}>
+								<input onKeyDown={this.search.bind(this)}
+									onClick={ this.state.isExpanded ? null : this.expand.bind(this) } type="text" ref="searchText" className="center-block" />							
+								<p className="cross" onClick={this.shrink.bind(this)} />
 							</div>
 						</div>
 					</div>
@@ -62,6 +64,12 @@ export default class Search extends React.Component {
 	}
 
 	expand() {
-		this.setState({ ...this.state, isExpanded: !this.state.isExpanded });
+		console.log('expanding the search icon')
+		this.setState({ ...this.state, isExpanded: true });
+	}
+
+	shrink() {
+		console.log('shrinking the search icon');
+		this.setState({ ...this.state, isExpanded: false });
 	}
 }
