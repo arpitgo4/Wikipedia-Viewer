@@ -13,7 +13,7 @@ export default class Search extends React.Component {
 		this.state = { isExpanded: false, pullUp };
 	}
 
-	componentDidUpdate(nextProps) {
+	componentWillUpdate(nextProps) {
 		this.setState({ ...this.state, pullUp: nextProps.pullUp });
 	}
 

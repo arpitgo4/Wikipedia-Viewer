@@ -158,7 +158,7 @@ html, body, #react-app {
 }
 
 .push-down {
-	a, input {
+	a, input, .cross {
 		transform: translateY(0%);
 	}
 	p {
