@@ -33,7 +33,7 @@ export default class Search extends React.Component {
 							<div className={`search-icon ${this.state.isExpanded ? 'search-icon-expand' : 'search-icon-shrink'}`}>
 								<input onKeyDown={this.search.bind(this)}
 									onClick={ this.state.isExpanded ? null : this.expand.bind(this) } type="text" ref="searchText" className="center-block" />							
-								<p className="cross" onClick={this.shrink.bind(this)} />
+								<p className={`cross ${this.state.isExpanded ? 'visible' : 'hidden' }`} onClick={this.shrink.bind(this)} />
 							</div>
 						</div>
 					</div>
