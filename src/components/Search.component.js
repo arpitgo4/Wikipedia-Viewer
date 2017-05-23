@@ -8,14 +8,18 @@ export default class Search extends React.Component {
 	ENTER_KEY_CODE = 13;
 	api = 'https://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=';
 
-	constructor() {
+	constructor({ pullUp }) {
 		super();
-		this.state = { isExpanded: false };
+		this.state = { isExpanded: false, pullUp };
+	}
+
+	componentDidUpdate(nextProps) {
+		this.setState({ ...this.state, pullUp: nextProps.pullUp });
 	}
 
 	render() {
 		return (
-			<div className={`row text-center ${this.props.pullUp ? 'pull-up' : 'push-down'}`}>
+			<div className={`row text-center ${this.state.pullUp ? 'pull-up' : 'push-down'}`}>
 				<div className="col-xs-12">
 					<div className="row">
 						<div className="col-xs-12">
@@ -32,7 +36,8 @@ export default class Search extends React.Component {
 						<div className="col-xs-12">					
 							<div className={`search-icon ${this.state.isExpanded ? 'search-icon-expand' : 'search-icon-shrink'}`}>
 								<input onKeyDown={this.search.bind(this)}
-									onClick={ this.state.isExpanded ? null : this.expand.bind(this) } type="text" ref="searchText" className="center-block" />							
+										onClick={ this.state.isExpanded ? null : this.expand.bind(this) } 
+										type="text" ref="searchText" className="center-block" />							
 								<p className={`cross ${this.state.isExpanded ? 'visible' : 'hidden' }`} onClick={this.shrink.bind(this)} />
 							</div>
 						</div>
@@ -64,12 +69,10 @@ export default class Search extends React.Component {
 	}
 
 	expand() {
-		console.log('expanding the search icon')
 		this.setState({ ...this.state, isExpanded: true });
 	}
 
 	shrink() {
-		console.log('shrinking the search icon');
-		this.setState({ ...this.state, isExpanded: false });
+		this.setState({ ...this.state, isExpanded: false, pullUp: false });
 	}
 }
